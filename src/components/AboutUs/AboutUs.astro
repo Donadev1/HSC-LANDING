@@ -1,12 +1,77 @@
 ---
-
+import { useTranslations } from "../../i18n/util";
+import { languages } from "../../i18n/ui";
+const currentLang = Astro.currentLocale || "es";
+import "./AboutUs.css";
+const translateLabels = useTranslations(currentLang as keyof typeof languages);
 ---
 
 <section>
-  <h1>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, quasi
-    repudiandae voluptas, qui facere nisi dolorem quibusdam odio quo deleniti ut
-    blanditiis consequatur debitis aliquam? Earum repellendus facilis nesciunt
-    esse.
-  </h1>
+  <div class="about-us-container">
+
+  <div class="left-section">
+    <h2>
+      <strong>Hacemos realidad proyectos que</strong>
+
+      <span class="highlight">Transforman</span>
+    </h2>
+
+    <p class="intro">
+      Con talento humano altamente calificado, construimos soluciones integrales
+      en ingeniería civil, montaje industrial y estructuras metálicas.
+    </p>
+
+    <p class="intro">
+      Llevamos más de 15 años brindando confianza al sector industrial y
+      comercial de la Costa Norte, con servicios que combinan calidad,
+      cumplimiento y experiencia.
+    </p>
+
+    <ul class="features">
+      <li>Personal certificado en múltiples oficios</li>
+
+      <li>Red de profesionales en obra y mantenimiento</li>
+
+      <li>15+ años de experiencia</li>
+
+      <li>Proyectos civiles, industriales y de saneamiento</li>
+
+      <li>Confianza garantizada por nuestros clientes</li>
+    </ul>
+  </div>
+
+  <div class="right-section">
+    <!-- Columna 1 -->
+    <div class="grid-item item1">
+      <img
+        src="/assets/images/first-image-card-about-us.png"
+        alt="Trabajadores en obra"
+      />
+    </div>
+    <div class="grid-item item2 badge-content">
+      <img src="/assets/images/badge-bg-1.png" alt="Fondo badge" />
+      <div class="badge-text">
+        <img src="/assets/icons/clients-icon.svg" alt="Icono" />
+        <div>
+          <strong>10+ Clientes</strong><br />
+          <small>Satisfechos con nosotros</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna 2 (invertida) -->
+    <div class="grid-item item3 badge-content">
+      <img src="/assets/images/badge-bg-2.png" alt="Fondo badge" />
+      <div class="badge-text">
+        <img src="/assets/icons/experience-icon.svg" alt="Icono" />
+        <div>
+          <strong>15+ Años</strong><br />
+          <small>De Experiencia</small>
+        </div>
+      </div>
+    </div>
+    <div class="grid-item item4">
+      <img src="/assets/images/first-image-card-about-us.png" alt="Ciudad" />
+    </div>
+  </div>
 </section>
